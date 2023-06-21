@@ -1,0 +1,42 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<form asp-action="Create" method="post">
+    <table class="table table-bordered">
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.EmployeeName)</td>
+            <td> <input asp-for="EmployeeName" class="form-control" placeholder="Enter Employee Name" />
+                 <span asp-validation-for="EmployeeName" class="text-danger"> </span>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.Email)</td>
+            <td>
+                <input asp-for="Email" class="form-control" placeholder="Enter Employee Email" />
+                <span asp-validation-for="Email" class="text-danger"> </span>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.country)</td>
+            <td>
+                <input asp-for="country" class="form-control" placeholder="Enter Employee country" />
+                <span asp-validation-for="country" class="text-danger"> </span>
+
+            </td>
+            
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="save" class="btn btn-success" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+

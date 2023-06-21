@@ -1,0 +1,14 @@
+﻿@model Employee
+@{ ViewData["Title"] = "Delete"; }
+
+<h1>Are you sure to delete @Model.EmployeeName ? </h1>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="id" />
+
+    <input type="submit" name="name" value="Sure, Delete" class="btn btn-outline-danger" />
+    <a asp-action="Index" class="btn btn-outline-info">Cancel </a>
+
+</form>
+
+

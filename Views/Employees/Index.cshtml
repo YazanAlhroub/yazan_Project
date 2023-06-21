@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-action="Create" asp-controller="Employees" class="btn btn-secondary" > Create</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th> @Html.DisplayNameFor(x => x.EmployeeName)</th>
+
+        <th> @Html.DisplayNameFor(x => x.Email)</th>
+        <th> operations</th>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td><a asp-action="Details" asp-route-id="@emp.id">@emp.EmployeeName</a></td>
+            <td> @emp.Email</td>
+            <td>
+                <a asp-action="Details" asp-controller="Employees" class="btn btn-secondary" asp-route-id="@emp.id"> more details</a>
+
+                <a asp-action="Edit" asp-controller="Employees" class="btn btn-success" asp-route-id="@emp.id"> Edit</a>
+                <a asp-action="Delete" asp-controller="Employees" class="btn btn-danger" asp-route-id="@emp.id"> Delete</a>
+            </td>
+        </tr>
+    }
+</table>
